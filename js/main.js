@@ -4,17 +4,15 @@ class Student {
         this.course = course;
         this.fullName = fullName;
         this.marks = marks;
-        this.IsStudied = true;
+        this.isStudied = true;
     }
 
     get getMark() {
-        if (!this.IsStudied) return null;
-        return this.marks;
+        return this.isStudied ? this.marks : null;
     }
 
     set setMark(mark) {
-        if (!this.IsStudied) return null;
-        this.marks.push(mark);
+        this.isStudied && this.marks.push(mark);
     }
 
     getInfo() {
@@ -29,11 +27,11 @@ class Student {
     }
 
     dismiss() {
-        this.IsStudied = false;
+        this.isStudied = false;
     }
 
     recover() {
-        this.IsStudied = true;
+        this.isStudied = true;
     }
 }
 
