@@ -16,7 +16,11 @@ class Student {
     }
 
     getInfo() {
-        return `Студент ${this.course}го курсу ${this.university} , ${ this.fullName }`;
+        return {
+            course: this.course,
+            university: this.university,
+            fullName: this.fullName
+        }
     }
 
     getAverageMark() {
@@ -27,11 +31,15 @@ class Student {
     }
 
     dismiss() {
-        this.isStudied = false;
+        if(this.isStudied){
+            this.isStudied = false;
+        }
     }
 
     recover() {
-        this.isStudied = true;
+        if(!this.isStudied){
+            this.isStudied = true;
+        }
     }
 }
 
